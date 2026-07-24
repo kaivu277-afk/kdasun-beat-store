@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO: Thêm dòng Sitemap sau khi cấu hình domain thật trong config.js.
+# Sitemap: https://ten-mien-cua-ban.example/sitemap.xml
