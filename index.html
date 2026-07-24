@@ -1,16 +1,214 @@
-<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#07080d"><meta name="description" content="KDASUN Beat Store - nghe thử, mua license và beat độc quyền."><meta property="og:title" content="KDASUN Beat Store"><meta property="og:description" content="Beat chất lượng cao cho ca sĩ và nhà sáng tạo."><meta property="og:image" content="assets/og-kdasun.jpg"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><title>KDASUN Beat Store</title><link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png"><link rel="manifest" href="manifest.webmanifest"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head>
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="KDASUN — Premium beats for artists worldwide.">
+  <title>KDASUN — Premium Beats</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
-<header class="topbar"><a class="brand" href="#home"><img src="assets/icon-192.png" alt="Logo KDASUN"><span><strong>KDASUN</strong><small>BEAT STORE</small></span></a><nav><a href="#beats">Kho beat</a><a href="#licenses">License</a><a href="#contact">Liên hệ</a></nav><div class="head-actions"><button id="loginBtn" class="ghost">Đăng nhập</button><button id="adminBtn" class="icon-btn" title="Quản trị">⚙</button><button id="cartBtn" class="cart">🛒 <span id="cartCount">0</span></button></div></header>
-<main>
-<section class="hero" id="home"><div class="hero-copy"><span class="eyebrow">BEAT ĐỘC QUYỀN • NGHE THỬ • NHẬN FILE NHANH</span><h1>Âm sắc phù hợp<br><em>với bài hát của bạn.</em></h1><p>Beat Pop, Ballad, Lao Dance, Vinahouse, Trap và nhiều dòng nhạc dành cho ca sĩ, nhà sáng tạo và nghệ sĩ độc lập.</p><div class="hero-actions"><a class="primary" href="#beats">Khám phá kho beat</a><button class="ghost" id="customBeatBtn">Đặt beat riêng</button></div><div class="stats"><div><strong id="beatStat">9+</strong><span>Beat đang bán</span></div><div><strong id="listenStat">0</strong><span>Lượt nghe thử</span></div><div><strong>24h</strong><span>Hỗ trợ nhanh</span></div></div></div><div class="hero-art"><div class="vinyl"><div class="bars" id="bars"></div></div><div class="now"><small>ĐANG PHÁT</small><strong id="nowTitle">Chọn một beat để nghe</strong><span id="nowMeta">KDASUN Beat Store</span></div></div></section>
-<section class="section" id="beats"><div class="section-head"><div><span class="eyebrow">KHO BEAT</span><h2>Chọn chất nhạc của bạn</h2></div><input id="search" type="search" placeholder="Tìm tên beat, thể loại, BPM..."></div><div class="filters" id="filters"></div><div class="beat-grid" id="beatGrid"></div></section>
-<section class="section" id="licenses"><div class="center"><span class="eyebrow">BẢNG GIÁ</span><h2>License phù hợp mọi nhu cầu</h2></div><div class="license-grid"><article><b>MP3</b><h3>Cơ bản</h3><p>Phù hợp demo và mạng xã hội.</p><ul><li>MP3 chất lượng cao</li><li>10.000 lượt phát hành</li><li>YouTube, TikTok, Facebook</li></ul></article><article class="hot"><i>PHỔ BIẾN</i><b>WAV</b><h3>Chuyên nghiệp</h3><p>Phù hợp phát hành chính thức.</p><ul><li>WAV + MP3</li><li>100.000 lượt phát hành</li><li>Được kiếm tiền nền tảng số</li></ul></article><article><b>STEMS</b><h3>Studio</h3><p>Toàn bộ track để mix lại.</p><ul><li>WAV, MP3 và track stems</li><li>Không giới hạn lượt phát</li><li>Được chỉnh sửa phối khí</li></ul></article><article><b>EXCLUSIVE</b><h3>Độc quyền</h3><p>Beat được khóa sau khi bán.</p><ul><li>Chuyển quyền khai thác</li><li>Gỡ khỏi kho công khai</li><li>Hợp đồng riêng</li></ul></article></div></section>
-<section class="contact" id="contact"><div><span class="eyebrow">ĐẶT BEAT RIÊNG</span><h2>Bạn đã có lời hoặc giai điệu?</h2><p>Gửi bản demo và phong cách mong muốn. KDASUN sẽ tư vấn cấu trúc, phối khí và license phù hợp.</p></div><div class="contact-card"><a id="phoneLink" href="tel:0900000000">📞 <span id="phoneText">0900 000 000</span></a><a id="mailLink" href="mailto:contact@kdasunmusic.com">✉ <span id="mailText">contact@kdasunmusic.com</span></a><a id="zaloLink" href="https://zalo.me/0900000000" target="_blank">💬 Chat Zalo</a></div></section>
-</main><footer><strong>KDASUN BEAT STORE</strong><span>© 2026. All rights reserved.</span></footer>
-<div class="player" id="player"><button id="playerPlay">▶</button><img id="playerCover" alt=""><div class="track"><strong id="playerTitle">Chưa chọn beat</strong><span id="playerGenre">—</span><input id="progress" type="range" min="0" max="100" value="0"></div><span id="playerTime">00:00 / 00:00</span><button id="playerBuy" class="primary small">Mua beat</button></div>
-<div class="drawer" id="cartDrawer"><div class="drawer-head"><h3>Giỏ hàng</h3><button data-close="cartDrawer">✕</button></div><div id="cartItems" class="drawer-body"></div><div class="drawer-foot"><div><span>Tổng cộng</span><strong id="cartTotal">0đ</strong></div><button id="checkoutBtn" class="primary">Thanh toán bằng QR</button></div></div>
-<div class="modal" id="authModal"><div class="modal-card auth"><button class="x" data-close="authModal">✕</button><h3>Đăng nhập nhanh</h3><p>Lưu đơn hàng và mở lại beat đã mua.</p><button class="social fb" id="facebookLogin">ⓕ Tiếp tục với Facebook</button><button class="social google" id="googleLogin">G Tiếp tục với Google</button><label>Email<input id="emailLogin" type="email" placeholder="ban@email.com"></label><button class="primary" id="emailLoginBtn">Tiếp tục bằng email</button><small>Bản V2 demo lưu tài khoản trên thiết bị. OAuth Facebook/Google thật cần cấu hình ứng dụng.</small></div></div>
-<div class="modal" id="buyModal"><div class="modal-card buy"><button class="x" data-close="buyModal">✕</button><div id="buyContent"></div></div></div>
-<div class="modal" id="qrModal"><div class="modal-card qr"><button class="x" data-close="qrModal">✕</button><h3>Quét QR để thanh toán</h3><div id="qrBox"></div><div id="paymentInfo"></div><button id="confirmPaid" class="primary">Tôi đã chuyển khoản</button><small id="paymentNote">Bản hiện tại xác nhận thủ công. Khi kết nối webhook ngân hàng/cổng thanh toán, hệ thống sẽ tự mở khóa.</small></div></div>
-<div class="modal" id="adminModal"><div class="modal-card admin"><button class="x" data-close="adminModal">✕</button><div class="admin-head"><div><h3>Quản trị KDASUN</h3><p>Thêm beat, thay ảnh, nhạc nghe thử và thông tin thanh toán.</p></div><button id="resetData" class="danger">Khôi phục mẫu</button></div><div class="admin-tabs"><button class="active" data-tab="beatTab">Beat</button><button data-tab="settingTab">Cài đặt</button></div><div id="beatTab" class="tab active"><form id="beatForm"><input type="hidden" id="editId"><div class="form-grid"><label>Tên beat<input id="fTitle" required></label><label>Thể loại<input id="fGenre" required></label><label>BPM<input id="fBpm" type="number" required></label><label>Tone<input id="fKey" required></label><label>Giá WAV<input id="fPrice" type="number" required></label><label>Giá độc quyền<input id="fExclusive" type="number" required></label><label>Ảnh bìa<input id="fCover" type="file" accept="image/*"></label><label>File nghe thử<input id="fAudio" type="file" accept="audio/*"></label></div><div class="form-actions"><button type="submit" class="primary">Lưu beat</button><button type="button" id="clearForm" class="ghost">Tạo mới</button></div></form><div id="adminBeatList" class="admin-list"></div></div><div id="settingTab" class="tab"><form id="settingsForm"><div class="form-grid"><label>Tên ngân hàng<input id="sBank"></label><label>Số tài khoản<input id="sAccount"></label><label>Chủ tài khoản<input id="sOwner"></label><label>Số điện thoại/Zalo<input id="sPhone"></label><label>Email<input id="sEmail"></label><label>Mã ngân hàng VietQR<input id="sBankCode" placeholder="Ví dụ MB, VCB, BIDV"></label></div><button class="primary">Lưu cài đặt</button></form></div></div></div>
-<div class="overlay" id="overlay"></div><div class="toast" id="toast"></div><script src="app.js"></script></body></html>
+  <div class="noise"></div>
+
+  <header class="nav-shell">
+    <a class="brand" href="#top" aria-label="KDASUN home">
+      <span class="brand-mark">K</span>
+      <span class="brand-word">KDASUN</span>
+    </a>
+
+    <nav class="desktop-nav">
+      <a href="#catalog">Beats</a>
+      <a href="#licenses">Licenses</a>
+      <a href="#services">Custom beat</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="lang">VI / EN</button>
+      <button class="bag" id="bagButton">Bag <span id="bagCount">0</span></button>
+      <button class="menu" id="menuButton" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="kicker">ORIGINAL BEATS • GLOBAL LICENSES</p>
+        <h1>Sound that makes<br><span>people remember.</span></h1>
+        <p class="hero-text">Beat dành cho ca sĩ, nhà sáng tạo và nghệ sĩ độc lập. Nghe thử tức thì, chọn license rõ ràng, nhận file nhanh.</p>
+        <div class="hero-cta">
+          <a href="#catalog" class="button primary">Explore beats</a>
+          <button class="button secondary" id="heroPlay">Play featured beat</button>
+        </div>
+        <div class="proof">
+          <div><strong>120+</strong><span>Original beats</span></div>
+          <div><strong>38K</strong><span>Total plays</span></div>
+          <div><strong>24H</strong><span>Fast support</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div class="featured-card">
+          <div class="featured-cover">
+            <div class="cover-label">FEATURED DROP</div>
+            <div class="cover-title">AFTER<br>MIDNIGHT</div>
+            <div class="cover-index">001</div>
+          </div>
+          <div class="featured-meta">
+            <div>
+              <span>AFTER MIDNIGHT</span>
+              <small>Dark R&B · 96 BPM · F#m</small>
+            </div>
+            <button class="round-play" id="featuredPlay">▶</button>
+          </div>
+          <div class="mini-wave" id="miniWave"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ticker" aria-label="Genres">
+      <div class="ticker-track">
+        <span>R&B</span><i>✦</i><span>TRAP SOUL</span><i>✦</i><span>VINAHOUSE</span><i>✦</i><span>LAO DANCE</span><i>✦</i><span>BALLAD</span><i>✦</i><span>C-POP</span><i>✦</i>
+        <span>R&B</span><i>✦</i><span>TRAP SOUL</span><i>✦</i><span>VINAHOUSE</span><i>✦</i><span>LAO DANCE</span><i>✦</i><span>BALLAD</span><i>✦</i><span>C-POP</span><i>✦</i>
+      </div>
+    </section>
+
+    <section class="catalog" id="catalog">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">LATEST CATALOG</p>
+          <h2>Find your next sound.</h2>
+        </div>
+        <div class="catalog-tools">
+          <label class="search">
+            <span>⌕</span>
+            <input id="searchInput" type="search" placeholder="Search title, genre, BPM">
+          </label>
+          <button class="filter-toggle" id="filterToggle">Filters</button>
+        </div>
+      </div>
+
+      <div class="filter-row" id="filterRow"></div>
+      <div class="track-list" id="trackList"></div>
+      <button class="load-more" id="loadMore">Show more beats</button>
+    </section>
+
+    <section class="license-section" id="licenses">
+      <div class="license-intro">
+        <p class="kicker">SIMPLE LICENSING</p>
+        <h2>Clear rights.<br>No confusion.</h2>
+        <p>Chọn đúng gói cho mục đích phát hành. Mọi license đều hiển thị minh bạch trước khi thanh toán.</p>
+      </div>
+
+      <div class="license-stack">
+        <article>
+          <span class="license-no">01</span>
+          <div><h3>MP3 Lease</h3><p>Demo, social content, independent releases.</p></div>
+          <strong>From 299K</strong>
+        </article>
+        <article class="featured-license">
+          <span class="license-no">02</span>
+          <div><h3>WAV Premium</h3><p>Professional release, monetization, high quality master.</p></div>
+          <strong>From 599K</strong>
+        </article>
+        <article>
+          <span class="license-no">03</span>
+          <div><h3>Trackout Stems</h3><p>Full production stems for mixing and arrangement.</p></div>
+          <strong>From 1.29M</strong>
+        </article>
+        <article>
+          <span class="license-no">04</span>
+          <div><h3>Exclusive Rights</h3><p>Beat removed from store after purchase.</p></div>
+          <strong>Contact</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="service-section" id="services">
+      <div class="service-card">
+        <p class="kicker">CUSTOM PRODUCTION</p>
+        <h2>Your lyrics.<br>Your story.<br>Your own sound.</h2>
+        <p>Gửi demo, lời bài hát hoặc giai điệu. KDASUN xây dựng bản phối riêng theo chất giọng và mục tiêu phát hành của bạn.</p>
+        <a class="button light" href="https://zalo.me/0900000000">Start a project</a>
+      </div>
+      <div class="service-art">
+        <div class="studio-grid"></div>
+        <div class="studio-word">CUSTOM</div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-line">
+        <span>Independent sound studio</span>
+        <span>Vietnam · Worldwide</span>
+      </div>
+      <h2>Built for artists who want<br>their music to feel different.</h2>
+      <div class="about-bottom">
+        <p>KDASUN tập trung vào melody dễ nhớ, không gian âm thanh rộng và bản phối có khả năng nghe lại lâu dài.</p>
+        <div class="socials">
+          <a href="#">YouTube ↗</a>
+          <a href="#">TikTok ↗</a>
+          <a href="#">Facebook ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">KDASUN</div>
+    <div class="footer-meta">
+      <span>© 2026 KDASUN</span>
+      <a href="#">License terms</a>
+      <a href="#">Privacy</a>
+      <a href="mailto:contact@kdasunmusic.com">contact@kdasunmusic.com</a>
+    </div>
+  </footer>
+
+  <aside class="player" id="player">
+    <button class="player-cover" id="playerCover">AM</button>
+    <div class="player-info">
+      <strong id="playerTitle">After Midnight</strong>
+      <span id="playerMeta">Dark R&B · 96 BPM</span>
+    </div>
+    <button class="player-control" id="prevButton">←</button>
+    <button class="player-main" id="playerMain">▶</button>
+    <button class="player-control" id="nextButton">→</button>
+    <div class="timeline">
+      <div class="timeline-fill" id="timelineFill"></div>
+    </div>
+    <span class="time" id="timeLabel">00:00 / 00:30</span>
+    <button class="buy-small" id="playerBuy">Buy license</button>
+  </aside>
+
+  <aside class="bag-drawer" id="bagDrawer">
+    <div class="drawer-head">
+      <h3>Your bag</h3>
+      <button id="closeBag">×</button>
+    </div>
+    <div id="bagItems" class="bag-items"></div>
+    <div class="drawer-total">
+      <span>Total</span>
+      <strong id="bagTotal">0₫</strong>
+    </div>
+    <button class="checkout" id="checkoutButton">Continue to checkout</button>
+  </aside>
+  <div class="backdrop" id="backdrop"></div>
+
+  <dialog id="licenseDialog">
+    <button class="dialog-close" id="closeDialog">×</button>
+    <div class="dialog-cover" id="dialogCover">AM</div>
+    <p class="kicker">SELECT LICENSE</p>
+    <h3 id="dialogTitle">After Midnight</h3>
+    <div class="license-options" id="licenseOptions"></div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
