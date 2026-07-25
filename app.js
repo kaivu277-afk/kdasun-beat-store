@@ -22,7 +22,7 @@
       genre: String(beat.genre || "Chưa phân loại"), mood: String(beat.mood || ""),
       bpm: Number(beat.bpm) || 0, key: String(beat.key || "—"), price: Math.max(0, Number(beat.price) || 0),
       theme: String(beat.theme || beat.t || ""), description: String(beat.description || beat.desc || ""),
-      previewUrl: String(beat.previewUrl || "")
+      coverUrl: String(beat.coverUrl || ""), previewUrl: String(beat.previewUrl || "")
     }));
   }
   function save() {
@@ -40,17 +40,19 @@
   }
   function render() {
     const list = filteredBeats();
-    $("#grid").innerHTML = list.length ? list.map(beat => `<article class="card"><div class="art ${escapeHtml(beat.theme)}"><button type="button" data-play="${escapeHtml(beat.id)}" aria-label="Nghe thử ${escapeHtml(beat.title)}">▶</button></div><div class="body"><div class="row"><h3>${escapeHtml(beat.title)}</h3><button type="button" class="heart ${favorites.has(beat.id) ? "on" : ""}" data-favorite="${escapeHtml(beat.id)}" aria-label="${favorites.has(beat.id) ? "Bỏ khỏi" : "Thêm vào"} yêu thích">${favorites.has(beat.id) ? "♥" : "♡"}</button></div><small class="meta">${escapeHtml(beat.genre)} · BPM ${beat.bpm || "—"} · KEY ${escapeHtml(beat.key)}${beat.mood ? ` · ${escapeHtml(beat.mood)}` : ""}</small><div class="bottom"><span class="price">${formatMoney(beat.price)}</span><button type="button" class="add" data-cart="${escapeHtml(beat.id)}">Thêm giỏ</button></div></div></article>`).join("") : `<div class="empty"><b>Không tìm thấy beat phù hợp.</b><small>Hãy thử từ khóa hoặc thể loại khác.</small></div>`;
+    $("#grid").innerHTML = list.length ? list.map(beat => `<article class="card"><div class="art ${escapeHtml(beat.theme)} ${beat.coverUrl ? "has-cover" : ""}">${beat.coverUrl ? `<img src="${escapeHtml(beat.coverUrl)}" alt="Ảnh bìa ${escapeHtml(beat.title)}" loading="lazy">` : ""}<span class="beat-badge">${beat.previewUrl ? "CÓ BẢN NGHE THỬ" : "KDASUN ORIGINAL"}</span><button class="play-button" type="button" data-play="${escapeHtml(beat.id)}" aria-label="Nghe thử ${escapeHtml(beat.title)}">▶</button></div><div class="card-body"><div class="card-title"><h3>${escapeHtml(beat.title)}</h3><button type="button" class="heart ${favorites.has(beat.id) ? "on" : ""}" data-favorite="${escapeHtml(beat.id)}" aria-label="${favorites.has(beat.id) ? "Bỏ khỏi" : "Thêm vào"} yêu thích">${favorites.has(beat.id) ? "♥" : "♡"}</button></div><small class="meta">${escapeHtml(beat.genre)} · ${beat.bpm || "—"} BPM · ${escapeHtml(beat.key)}${beat.mood ? ` · ${escapeHtml(beat.mood)}` : ""}</small><p class="description">${escapeHtml(beat.description || "Beat tuyển chọn từ KDASUN Music.")}</p><div class="card-bottom"><span class="price">Giá từ<b>${formatMoney(beat.price)}</b></span><button type="button" class="add" data-cart="${escapeHtml(beat.id)}">Chọn beat +</button></div></div></article>`).join("") : `<div class="empty"><b>Không tìm thấy beat phù hợp.</b><small>Hãy thử từ khóa hoặc thể loại khác.</small></div>`;
     $("#resultNote").textContent = `${list.length} beat`;
     $("#favN").textContent = favorites.size; $("#cartN").textContent = cart.length; $("#beatTotal").textContent = beats.length;
   }
-  function selectBeat(id) {
+  function selectBeat(id, autoplay = false) {
     const beat = beats.find(item => item.id === id); if (!beat) return;
     audio.pause();
     audio.removeAttribute("src");
     if (beat.previewUrl) audio.src = beat.previewUrl;
     currentBeat = beat; $("#player").hidden = false; $("#ptitle").textContent = beat.title;
     $("#pmeta").textContent = `${beat.genre} · ${beat.bpm || "—"} BPM · ${beat.key}`; $("#pp").textContent = "▶";
+    $("#pcover").style.backgroundImage = beat.coverUrl ? `url("${beat.coverUrl.replace(/["\\]/g, "\\$&")}")` : "";
+    if (autoplay) playSelected();
   }
   function playSelected() {
     if (!currentBeat) return;
@@ -62,7 +64,7 @@
     $("#drawer").classList.add("open"); $("#drawer").setAttribute("aria-hidden", "false"); $("#shade").hidden = false; document.body.classList.add("drawer-open");
     $("#dtitle").textContent = type === "favorites" ? "Beat yêu thích" : "Giỏ hàng";
     const list = type === "favorites" ? beats.filter(beat => favorites.has(beat.id)) : cart.map(id => beats.find(beat => beat.id === id)).filter(Boolean);
-    $("#dbody").innerHTML = list.length ? list.map(beat => `<article class="item"><span class="cover"></span><div><b>${escapeHtml(beat.title)}</b><small>${escapeHtml(beat.genre)}</small><strong>${formatMoney(beat.price)}</strong></div>${type === "cart" ? `<button type="button" data-remove="${escapeHtml(beat.id)}" aria-label="Xóa ${escapeHtml(beat.title)} khỏi giỏ">×</button>` : ""}</article>`).join("") : "<p>Chưa có nội dung.</p>";
+    $("#dbody").innerHTML = list.length ? list.map(beat => `<article class="item">${beat.coverUrl ? `<img class="cover" src="${escapeHtml(beat.coverUrl)}" alt="">` : `<span class="cover"></span>`}<div><b>${escapeHtml(beat.title)}</b><small>${escapeHtml(beat.genre)}</small><strong>${formatMoney(beat.price)}</strong></div>${type === "cart" ? `<button type="button" data-remove="${escapeHtml(beat.id)}" aria-label="Xóa ${escapeHtml(beat.title)} khỏi giỏ">×</button>` : ""}</article>`).join("") : "<p>Chưa có nội dung.</p>";
     $("#dclose").focus();
   }
   function closeDrawer() { $("#drawer").classList.remove("open"); $("#drawer").setAttribute("aria-hidden", "true"); $("#shade").hidden = true; document.body.classList.remove("drawer-open"); }
@@ -71,7 +73,7 @@
   [...new Set(beats.map(beat => beat.genre))].sort((a,b) => a.localeCompare(b,"vi")).forEach(genre => { const option=document.createElement("option"); option.value=genre; option.textContent=genre; $("#genre").append(option); });
   document.addEventListener("click", event => {
     const play=event.target.closest("[data-play]"), favorite=event.target.closest("[data-favorite]"), add=event.target.closest("[data-cart]"), remove=event.target.closest("[data-remove]");
-    if (play) selectBeat(play.dataset.play);
+    if (play) selectBeat(play.dataset.play, true);
     if (favorite) { favorites.has(favorite.dataset.favorite) ? favorites.delete(favorite.dataset.favorite) : favorites.add(favorite.dataset.favorite); save(); render(); }
     if (add) { if (!cart.includes(add.dataset.cart)) { cart.push(add.dataset.cart); save(); render(); showToast("Đã thêm beat vào giỏ hàng."); } else showToast("Beat này đã có trong giỏ hàng."); }
     if (remove) { cart=cart.filter(id => id !== remove.dataset.remove); save(); render(); openDrawer("cart"); }
