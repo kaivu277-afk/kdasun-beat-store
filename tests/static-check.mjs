@@ -26,6 +26,9 @@ const scripts=read("app.js")+read("admin.js");
 check(!/\balert\s*\(/.test(scripts),"Còn dùng alert()");
 check(!/(?:password|mật khẩu)\s*[:=]\s*["'][^"']+/i.test(scripts),"Có dấu hiệu mật khẩu hard-code");
 check(!/\bonclick=/.test(read("index.html")+read("admin.html")),"Có inline onclick");
+check(!/href=["']admin\.html["']/.test(read("index.html")),"Trang khách còn hiển thị liên kết quản trị");
+check(!/<aside[\s>]/.test(read("index.html")),"Trang khách còn dùng sidebar kiểu quản trị");
+check(/id=["']beats["']/.test(read("index.html")) && /id=["']cartOpen["']/.test(read("index.html")),"Trang khách thiếu kho beat hoặc giỏ hàng");
 
 if(failures.length){console.error(failures.map(item=>`- ${item}`).join("\n"));process.exit(1);}
 console.log("Kiểm tra tĩnh đạt: đủ 7 file chính, mã hóa/đường dẫn/ID/JavaScript an toàn.");
