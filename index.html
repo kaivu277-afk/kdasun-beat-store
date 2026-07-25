@@ -2,345 +2,50 @@
 <html lang="vi">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#090909">
-  <meta name="color-scheme" content="dark">
-  <meta name="description" content="KDASUN Music cung cấp beat bản quyền, phối nhạc theo yêu cầu và dịch vụ sáng tạo âm nhạc chuyên nghiệp cho nghệ sĩ Việt Nam, Lào và Thái Lan.">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta property="og:locale" content="vi_VN">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="KDASUN Music">
-  <meta property="og:title" content="KDASUN Music — Kho beat bản quyền & sản xuất âm nhạc">
-  <meta property="og:description" content="Beat bản quyền, phối nhạc riêng và dịch vụ sáng tạo dành cho nghệ sĩ độc lập.">
-  <meta property="og:image" content="assets/og-kdasun.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="KDASUN Music">
-  <meta name="twitter:description" content="Kho beat bản quyền và dịch vụ sản xuất âm nhạc chuyên nghiệp.">
-  <meta name="twitter:image" content="assets/og-kdasun.jpg">
-  <title>KDASUN Music — Kho beat bản quyền & sản xuất âm nhạc</title>
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="assets/kdasun-logo.png" as="image">
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f7faf7">
+  <meta name="description" content="KDASUN Music — kho beat bản quyền và dịch vụ sáng tạo âm nhạc dành cho nghệ sĩ Việt Nam, Lào và Thái Lan.">
+  <title>KDASUN Music</title>
   <link rel="stylesheet" href="style.css">
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"KDASUN Music",
-    "description":"Kho beat bản quyền và dịch vụ sản xuất âm nhạc chuyên nghiệp.",
-    "logo":"assets/icon-512.png"
-  }
-  </script>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Chuyển đến nội dung chính</a>
-  <header class="site-header" id="siteHeader">
-    <div class="header-inner">
-      <a class="brand" href="#trang-chu" aria-label="KDASUN Music — Trang chủ">
-        <img src="assets/kdasun-logo.png" width="44" height="44" alt="" decoding="async">
-        <span><strong>KDASUN</strong><small>MUSIC</small></span>
-      </a>
-      <nav class="desktop-nav" aria-label="Điều hướng chính">
-        <a href="#trang-chu">Trang chủ</a>
-        <a href="#kho-beat">Kho beat</a>
-        <a href="#the-loai">Thể loại</a>
-        <a href="#bang-gia">Bảng giá</a>
-        <a href="#phoi-nhac">Phối nhạc riêng</a>
-        <a href="#dich-vu">Dịch vụ</a>
-        <a href="#huong-dan">Hướng dẫn</a>
-        <a href="#hoi-dap">Hỏi đáp</a>
-        <a href="#lien-he">Liên hệ</a>
-      </nav>
-      <div class="header-actions">
-        <button class="icon-button" id="favoriteButton" type="button" aria-label="Xem beat yêu thích" aria-pressed="false">
-          <span aria-hidden="true">♡</span><span class="count" id="favoriteCount">0</span>
-        </button>
-        <button class="icon-button" id="cartButton" type="button" aria-label="Mở giỏ hàng">
-          <span aria-hidden="true">⌑</span><span class="count" id="cartCount">0</span>
-        </button>
-        <button class="menu-button" id="menuButton" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="mobileMenu">
-          <span></span><span></span>
-        </button>
-      </div>
-    </div>
-    <nav class="mobile-menu" id="mobileMenu" aria-label="Điều hướng trên điện thoại" hidden>
-      <a href="#trang-chu">Trang chủ</a><a href="#kho-beat">Kho beat</a><a href="#the-loai">Thể loại</a>
-      <a href="#bang-gia">Bảng giá</a><a href="#phoi-nhac">Phối nhạc riêng</a><a href="#dich-vu">Dịch vụ sáng tạo</a>
-      <a href="#huong-dan">Hướng dẫn mua</a><a href="#hoi-dap">Hỏi đáp</a><a href="#lien-he">Liên hệ</a>
-    </nav>
+  <a class="skip" href="#content">Chuyển đến nội dung chính</a>
+  <header>
+    <a class="logo" href="#home" aria-label="KDASUN Music — Trang chủ">K<span>KDASUN<small>MUSIC</small></span></a>
+    <label class="search-label"><span class="sr-only">Tìm kiếm beat</span><input id="search" type="search" placeholder="Tìm beat, thể loại, mood..." autocomplete="off"></label>
+    <button id="favOpen" type="button" aria-label="Mở danh sách yêu thích">♡ <i id="favN">0</i></button>
+    <button id="cartOpen" type="button" aria-label="Mở giỏ hàng">🛒 <i id="cartN">0</i></button>
   </header>
-
-  <main id="main-content">
-    <section class="hero section-shell" id="trang-chu">
-      <div class="hero-copy">
-        <p class="eyebrow">KDASUN MUSIC · VIỆT NAM / LÀO / THÁI LAN</p>
-        <h1>Âm thanh khiến<br><em>người nghe nhớ mãi.</em></h1>
-        <p class="lead">Kho beat bản quyền, dịch vụ phối nhạc và sản xuất nội dung dành cho ca sĩ, nghệ sĩ độc lập và nhà sáng tạo.</p>
-        <div class="button-row">
-          <a class="button button-primary" href="#kho-beat">Khám phá kho beat</a>
-          <button class="button button-secondary" id="heroPlayButton" type="button">Nghe beat nổi bật</button>
-          <button class="text-button" type="button" data-open-consultation="Phối nhạc theo yêu cầu">Đặt phối nhạc riêng <span aria-hidden="true">↗</span></button>
-        </div>
-        <dl class="hero-stats">
-          <div><dt id="beatStat">0</dt><dd>beat trong danh mục</dd></div>
-          <div><dt id="playStat">0</dt><dd>lượt nghe đã ghi nhận</dd></div>
-          <div><dt>24–48h</dt><dd>phản hồi tư vấn</dd></div>
-        </dl>
-      </div>
-      <div class="hero-feature" id="heroFeature" aria-live="polite"></div>
-    </section>
-
-    <section class="genre-ticker" id="the-loai" aria-label="Các thể loại âm nhạc">
-      <div class="ticker-track" id="genreTicker"></div>
-    </section>
-
-    <section class="content-section section-shell" aria-labelledby="featuredTitle">
-      <div class="section-heading">
-        <div><p class="eyebrow">TUYỂN CHỌN</p><h2 id="featuredTitle">Beat nổi bật</h2></div>
-        <a class="section-link" href="#kho-beat">Xem toàn bộ <span aria-hidden="true">→</span></a>
-      </div>
-      <div class="beat-strip" id="featuredBeats"></div>
-    </section>
-
-    <section class="content-section section-shell compact-top" aria-labelledby="newTitle">
-      <div class="section-heading">
-        <div><p class="eyebrow">VỪA PHÁT HÀNH</p><h2 id="newTitle">Beat mới</h2></div>
-      </div>
-      <div class="beat-strip" id="newBeats"></div>
-    </section>
-
-    <section class="content-section section-shell compact-top" aria-labelledby="popularTitle">
-      <div class="section-heading">
-        <div><p class="eyebrow">ĐƯỢC QUAN TÂM</p><h2 id="popularTitle">Được nghe nhiều</h2></div>
-      </div>
-      <div class="beat-strip" id="popularBeats"></div>
-    </section>
-
-    <section class="catalog-section" id="kho-beat" aria-labelledby="catalogTitle">
-      <div class="section-shell">
-        <div class="section-heading catalog-heading">
-          <div><p class="eyebrow">DANH MỤC KDASUN</p><h2 id="catalogTitle">Tìm chất nhạc của bạn</h2></div>
-          <p class="section-note">Tìm kiếm theo tên, phong cách, BPM, tone, mood hoặc producer.</p>
-        </div>
-        <div class="catalog-layout">
-          <aside class="filters" id="filterPanel" aria-label="Bộ lọc beat">
-            <div class="filter-head"><strong>Bộ lọc</strong><button class="plain-button" id="clearFilters" type="button">Xóa tất cả</button></div>
-            <label class="field"><span>Tìm kiếm</span><input id="searchInput" type="search" placeholder="Tên beat, tag, producer…" autocomplete="off"></label>
-            <label class="field"><span>Thể loại</span><select id="genreFilter"><option value="">Tất cả thể loại</option></select></label>
-            <label class="field"><span>Mood</span><select id="moodFilter"><option value="">Tất cả mood</option></select></label>
-            <label class="field"><span>Tone</span><select id="keyFilter"><option value="">Tất cả tone</option></select></label>
-            <div class="field range-field"><span>Khoảng BPM: <output id="bpmOutput">60–160</output></span><div><input id="bpmMin" type="range" min="60" max="160" value="60" aria-label="BPM tối thiểu"><input id="bpmMax" type="range" min="60" max="160" value="160" aria-label="BPM tối đa"></div></div>
-            <label class="field"><span>Mức giá</span><select id="priceFilter"><option value="">Tất cả mức giá</option><option value="free">Miễn phí</option><option value="under600">Dưới 600.000đ</option><option value="600to900">600.000đ – 900.000đ</option><option value="over900">Trên 900.000đ</option></select></label>
-            <div class="check-list">
-              <label><input id="freeFilter" type="checkbox"> Beat miễn phí</label>
-              <label><input id="exclusiveFilter" type="checkbox"> Có thể mua độc quyền</label>
-              <label><input id="newFilter" type="checkbox"> Beat mới</label>
-              <label><input id="featuredFilter" type="checkbox"> Beat nổi bật</label>
-            </div>
-          </aside>
-          <div class="catalog-results">
-            <div class="results-toolbar">
-              <button class="filter-mobile-button" id="filterMobileButton" type="button" aria-expanded="false" aria-controls="filterPanel">Bộ lọc</button>
-              <p id="resultCount" aria-live="polite">0 kết quả</p>
-              <label><span class="sr-only">Sắp xếp</span><select id="sortSelect">
-                <option value="newest">Mới nhất</option><option value="plays">Nghe nhiều nhất</option>
-                <option value="priceAsc">Giá thấp đến cao</option><option value="priceDesc">Giá cao đến thấp</option>
-                <option value="bpmAsc">BPM thấp đến cao</option><option value="bpmDesc">BPM cao đến thấp</option><option value="title">Tên A–Z</option>
-              </select></label>
-            </div>
-            <div class="catalog-grid" id="catalogGrid"></div>
-            <div class="empty-state" id="emptyState" hidden>
-              <span aria-hidden="true">♪</span><h3>Chưa tìm thấy beat phù hợp</h3>
-              <p>Hãy thử từ khóa khác hoặc xóa bớt bộ lọc.</p><button class="button button-secondary" type="button" data-clear-filters>Xóa bộ lọc</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="trust-section section-shell" aria-labelledby="trustTitle">
-      <div class="section-heading"><div><p class="eyebrow">VÌ SAO CHỌN KDASUN</p><h2 id="trustTitle">Mua beat với sự an tâm</h2></div></div>
-      <div class="trust-grid">
-        <article><span>01</span><h3>Quyền sử dụng rõ ràng</h3><p>Chọn đúng gói theo mục đích phát hành; giấy phép chính thức được xác nhận khi mua.</p></article>
-        <article><span>02</span><h3>File chất lượng cao</h3><p>Cấu trúc sẵn sàng bàn giao MP3, WAV hoặc bộ trackout theo gói đã chọn.</p></article>
-        <article><span>03</span><h3>Hỗ trợ trực tiếp</h3><p>Trao đổi với KDASUN trước và sau khi mua để chọn phương án phù hợp.</p></article>
-        <article><span>04</span><h3>Bảo mật thông tin</h3><p>Dữ liệu liên hệ chỉ được dùng để xử lý yêu cầu và bàn giao sản phẩm.</p></article>
-      </div>
-    </section>
-
-    <section class="pricing-section" id="bang-gia" aria-labelledby="pricingTitle">
-      <div class="section-shell">
-        <div class="section-heading light-heading">
-          <div><p class="eyebrow">GIẤY PHÉP SỬ DỤNG</p><h2 id="pricingTitle">Rõ quyền lợi, dễ lựa chọn</h2></div>
-          <p>Giá hiển thị là mức tham khảo từ dữ liệu từng beat.</p>
-        </div>
-        <div class="pricing-grid" id="pricingGrid"></div>
-        <p class="legal-note">Điều khoản chính thức sẽ được xác nhận trong giấy phép mua hàng.</p>
-      </div>
-    </section>
-
-    <section class="custom-section" id="phoi-nhac" aria-labelledby="customTitle">
-      <div class="custom-visual" aria-hidden="true"><span>KDASUN</span><div class="sound-lines"></div></div>
-      <div class="custom-copy">
-        <p class="eyebrow">PHỐI NHẠC THEO YÊU CẦU</p>
-        <h2 id="customTitle">Chất giọng của bạn.<br>Bản phối của riêng bạn.</h2>
-        <p>Gửi demo, lời bài hát hoặc giai điệu. KDASUN sẽ trao đổi về phong cách, cấu trúc và mục tiêu phát hành trước khi bắt đầu.</p>
-        <ol><li><span>01</span>Tiếp nhận demo và định hướng</li><li><span>02</span>Tư vấn chất liệu và cấu trúc</li><li><span>03</span>Sản xuất, nhận phản hồi và hoàn thiện</li></ol>
-        <button class="button button-primary" type="button" data-open-consultation="Phối nhạc theo yêu cầu">Yêu cầu tư vấn</button>
-      </div>
-    </section>
-
-    <section class="services-section section-shell" id="dich-vu" aria-labelledby="servicesTitle">
-      <div class="section-heading"><div><p class="eyebrow">HỆ SINH THÁI SÁNG TẠO</p><h2 id="servicesTitle">Từ ý tưởng đến khi phát hành</h2></div></div>
-      <div class="services-grid" id="servicesGrid"></div>
-    </section>
-
-    <section class="process-section section-shell" id="huong-dan" aria-labelledby="processTitle">
-      <div class="section-heading"><div><p class="eyebrow">HƯỚNG DẪN MUA</p><h2 id="processTitle">Bốn bước đơn giản</h2></div></div>
-      <ol class="process-grid">
-        <li><span>01</span><h3>Nghe và chọn beat</h3><p>Dùng tìm kiếm, bộ lọc và trang chi tiết để chọn beat phù hợp.</p></li>
-        <li><span>02</span><h3>Chọn giấy phép</h3><p>So sánh định dạng, quyền lợi và mức giá của từng gói.</p></li>
-        <li><span>03</span><h3>Gửi thông tin đặt mua</h3><p>Điền thông tin nhận file và mục đích sử dụng; hệ thống tạo mã đơn.</p></li>
-        <li><span>04</span><h3>Xác nhận và nhận file</h3><p>Liên hệ KDASUN để nhận thông tin thanh toán và lịch bàn giao.</p></li>
-      </ol>
-    </section>
-
-    <section class="testimonial-section section-shell" aria-labelledby="testimonialTitle">
-      <div class="section-heading"><div><p class="eyebrow">GÓC NHÌN KHÁCH HÀNG</p><h2 id="testimonialTitle">Trải nghiệm chúng tôi hướng tới</h2></div></div>
-      <div class="testimonial-note">Nội dung minh họa — sẽ được thay bằng đánh giá đã xác minh.</div>
-      <div class="testimonial-grid">
-        <blockquote><p>“Dễ nghe thử, dễ so sánh giấy phép và biết rõ bước tiếp theo trước khi đặt mua.”</p><footer>Hồ sơ trải nghiệm mẫu · Nghệ sĩ độc lập</footer></blockquote>
-        <blockquote><p>“Quy trình tư vấn tập trung vào chất giọng và mục tiêu phát hành, không chỉ chọn một beat có sẵn.”</p><footer>Hồ sơ trải nghiệm mẫu · Ca sĩ</footer></blockquote>
-        <blockquote><p>“Một nơi có thể đi từ beat, mix/master đến hình ảnh phát hành giúp dự án gọn hơn.”</p><footer>Hồ sơ trải nghiệm mẫu · Nhà sáng tạo</footer></blockquote>
-      </div>
-    </section>
-
-    <section class="faq-section section-shell" id="hoi-dap" aria-labelledby="faqTitle">
-      <div class="section-heading"><div><p class="eyebrow">CÂU HỎI THƯỜNG GẶP</p><h2 id="faqTitle">Trước khi bạn đặt mua</h2></div></div>
-      <div class="faq-list">
-        <details><summary>Tôi nên chọn giấy phép nào?<span>+</span></summary><p>MP3 Basic phù hợp bản demo và nội dung cơ bản; WAV Premium cho phát hành chất lượng cao; Trackout Stems khi cần mix hoặc chỉnh phối sâu; độc quyền dành cho nhu cầu khai thác riêng. Hãy liên hệ nếu bạn chưa chắc.</p></details>
-        <details><summary>Tôi có được nghe thử trước khi mua không?<span>+</span></summary><p>Có. Beat có file preview sẽ phát trực tiếp trên website. Beat chưa được gắn audio sẽ hiển thị rõ “Chưa có bản nghe thử”.</p></details>
-        <details><summary>Mua beat có nghĩa là sở hữu độc quyền không?<span>+</span></summary><p>Không, trừ khi bạn chọn và được xác nhận gói độc quyền. Các gói phổ thông là quyền sử dụng theo phạm vi của giấy phép.</p></details>
-        <details><summary>KDASUN có nhận phối nhạc Việt, Lào và Thái không?<span>+</span></summary><p>Có. KDASUN tiếp nhận demo và trao đổi kỹ về ngôn ngữ, phong cách, nhịp điệu và đối tượng nghe trước khi báo phương án.</p></details>
-        <details><summary>Website đã thanh toán tự động chưa?<span>+</span></summary><p>Chưa. Website tạo nội dung đơn hàng để gửi qua Zalo hoặc email. KDASUN sẽ xác nhận thông tin thanh toán và bàn giao trực tiếp.</p></details>
-      </div>
-    </section>
-
-    <section class="contact-section" id="lien-he" aria-labelledby="contactTitle">
-      <div class="section-shell contact-grid">
-        <div><p class="eyebrow">BẮT ĐẦU DỰ ÁN</p><h2 id="contactTitle">Kể KDASUN nghe<br>về bài hát của bạn.</h2><p>Gửi mục tiêu, demo hoặc phong cách tham khảo. Chúng tôi sẽ phản hồi với hướng triển khai phù hợp.</p></div>
-        <div class="contact-card">
-          <div><span>Zalo / điện thoại</span><a id="contactPhone" data-config-contact>Chưa cấu hình</a></div>
-          <div><span>Email</span><a id="contactEmail" data-config-contact>Chưa cấu hình</a></div>
-          <button class="button button-primary" type="button" data-open-consultation="Tư vấn dự án âm nhạc">Gửi yêu cầu tư vấn</button>
-          <p>Không cần thanh toán trước khi nhận được xác nhận chính thức.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="section-shell footer-grid">
-      <div class="footer-brand"><a class="brand" href="#trang-chu"><img src="assets/kdasun-logo.png" width="50" height="50" alt=""><span><strong>KDASUN</strong><small>MUSIC</small></span></a><p>Beat bản quyền, phối nhạc và dịch vụ sáng tạo dành cho nghệ sĩ độc lập.</p></div>
-      <div><h3>Khám phá</h3><a href="#kho-beat">Kho beat</a><a href="#bang-gia">Bảng giá</a><a href="#phoi-nhac">Phối nhạc riêng</a></div>
-      <div><h3>Hỗ trợ</h3><a href="#huong-dan">Hướng dẫn mua</a><a href="#hoi-dap">Hỏi đáp</a><button type="button" data-open-legal="terms">Điều khoản</button><button type="button" data-open-legal="privacy">Quyền riêng tư</button></div>
-      <div><h3>Kết nối</h3><a id="footerEmail" data-config-contact>Email chưa cấu hình</a><a id="footerZalo" data-config-contact>Zalo chưa cấu hình</a><div class="social-links" id="socialLinks"></div></div>
-    </div>
-    <div class="section-shell footer-bottom"><span>© <span id="currentYear"></span> KDASUN Music.</span><span>Được xây dựng cho nghệ sĩ Việt Nam, Lào và Thái Lan.</span></div>
-  </footer>
-
-  <div class="player" id="audioPlayer" hidden>
-    <audio id="audioElement" preload="metadata"></audio>
-    <div class="player-cover beat-cover" id="playerCover"></div>
-    <div class="player-track"><strong id="playerTitle">Chưa chọn beat</strong><span id="playerMeta">—</span></div>
-    <div class="player-controls">
-      <button type="button" id="previousButton" aria-label="Beat trước">←</button>
-      <button class="player-main" type="button" id="playPauseButton" aria-label="Phát">▶</button>
-      <button type="button" id="nextButton" aria-label="Beat tiếp theo">→</button>
-    </div>
-    <div class="player-progress">
-      <label class="sr-only" for="progressRange">Tiến trình phát</label><input id="progressRange" type="range" min="0" max="100" value="0" step="0.1">
-      <span><span id="currentTime">00:00</span> / <span id="durationTime">00:00</span></span>
-    </div>
-    <div class="volume-control">
-      <button type="button" id="muteButton" aria-label="Tắt âm">◕</button>
-      <label class="sr-only" for="volumeRange">Âm lượng</label><input id="volumeRange" type="range" min="0" max="1" value="0.8" step="0.05">
-    </div>
-    <button class="player-favorite" type="button" id="playerFavorite" aria-label="Thêm vào yêu thích">♡</button>
-    <button class="player-buy" type="button" id="playerBuy">Chọn giấy phép</button>
-    <button class="player-close" type="button" id="closePlayer" aria-label="Đóng trình phát">×</button>
-  </div>
-
-  <aside class="cart-drawer" id="cartDrawer" aria-labelledby="cartTitle" aria-hidden="true">
-    <div class="drawer-header"><div><p>ĐƠN HÀNG</p><h2 id="cartTitle">Giỏ hàng</h2></div><button type="button" id="closeCart" aria-label="Đóng giỏ hàng">×</button></div>
-    <div class="cart-items" id="cartItems"></div>
-    <div class="cart-footer">
-      <button class="plain-button danger-text" id="clearCart" type="button">Xóa toàn bộ</button>
-      <div><span>Tạm tính</span><strong id="cartTotal">0đ</strong></div>
-      <button class="button button-dark" id="checkoutButton" type="button">Tiếp tục đặt mua</button>
-      <p>Chưa thu tiền tại bước này.</p>
-    </div>
+  <aside>
+    <strong>KDASUN<small>MUSIC</small></strong>
+    <nav aria-label="Điều hướng chính"><a href="#home">⌂ Trang chủ</a><a href="#beats">♫ Kho beat</a><a href="#services">✦ Dịch vụ</a><a href="#contact">♡ Liên hệ</a><a href="admin.html">⚙ Quản trị cục bộ</a></nav>
+    <div class="vip">◇ KDASUN Music<p>Beat bản quyền và dịch vụ sáng tạo dành cho nghệ sĩ độc lập.</p></div>
   </aside>
-  <div class="page-backdrop" id="pageBackdrop" hidden></div>
-
-  <dialog class="modal beat-dialog" id="beatDialog" aria-labelledby="beatDialogTitle">
-    <button class="modal-close" type="button" data-close-dialog aria-label="Đóng">×</button>
-    <div id="beatDialogContent"></div>
-  </dialog>
-  <dialog class="modal license-dialog" id="licenseDialog" aria-labelledby="licenseDialogTitle">
-    <button class="modal-close" type="button" data-close-dialog aria-label="Đóng">×</button>
-    <div id="licenseDialogContent"></div>
-  </dialog>
-  <dialog class="modal checkout-dialog" id="checkoutDialog" aria-labelledby="checkoutTitle">
-    <button class="modal-close" type="button" data-close-dialog aria-label="Đóng">×</button>
-    <div class="modal-heading"><p class="eyebrow">THÔNG TIN ĐẶT MUA</p><h2 id="checkoutTitle">Hoàn tất yêu cầu</h2><p>Hệ thống chỉ tạo nội dung đơn hàng, chưa thực hiện thanh toán.</p></div>
-    <form id="checkoutForm" novalidate>
-      <div class="form-grid">
-        <label class="field"><span>Họ và tên *</span><input name="name" autocomplete="name" required><small class="field-error"></small></label>
-        <label class="field"><span>Số điện thoại</span><input name="phone" inputmode="tel" autocomplete="tel"><small class="field-error"></small></label>
-        <label class="field"><span>Zalo</span><input name="zalo" inputmode="tel"><small class="field-error"></small></label>
-        <label class="field"><span>Email nhận file</span><input name="email" type="email" autocomplete="email"><small class="field-error"></small></label>
-        <label class="field"><span>Tên nghệ sĩ</span><input name="artist" autocomplete="organization-title"><small class="field-error"></small></label>
-        <label class="field"><span>Mục đích sử dụng</span><select name="purpose"><option value="">Chọn mục đích</option><option>Phát hành chính thức</option><option>Đăng YouTube / mạng xã hội</option><option>Biểu diễn thương mại</option><option>Demo cá nhân</option><option>Khác</option></select><small class="field-error"></small></label>
-        <label class="field field-wide"><span>Ghi chú</span><textarea name="note" rows="3" placeholder="Thời gian dự kiến, yêu cầu xuất file…"></textarea><small class="field-error"></small></label>
-      </div>
-      <label class="agree-field"><input name="terms" type="checkbox"> <span>Tôi đồng ý để KDASUN liên hệ xác nhận đơn và hiểu rằng đây chưa phải thanh toán thành công.</span></label>
-      <small class="form-error" id="checkoutFormError"></small>
-      <button class="button button-primary" type="submit">Tạo nội dung đơn hàng</button>
-    </form>
-    <div id="orderResult" hidden></div>
-  </dialog>
-  <dialog class="modal consultation-dialog" id="consultationDialog" aria-labelledby="consultationTitle">
-    <button class="modal-close" type="button" data-close-dialog aria-label="Đóng">×</button>
-    <div class="modal-heading"><p class="eyebrow">YÊU CẦU TƯ VẤN</p><h2 id="consultationTitle">Bắt đầu một dự án</h2><p>Điền thông tin cơ bản; bạn có thể sao chép nội dung để gửi cho KDASUN.</p></div>
-    <form id="consultationForm" novalidate>
-      <input type="hidden" name="service">
-      <div class="form-grid">
-        <label class="field"><span>Họ và tên *</span><input name="name" required><small class="field-error"></small></label>
-        <label class="field"><span>Phương thức liên hệ *</span><input name="contact" placeholder="Zalo, điện thoại hoặc email" required><small class="field-error"></small></label>
-        <label class="field field-wide"><span>Bạn cần hỗ trợ gì?</span><textarea name="brief" rows="5" placeholder="Mô tả thể loại, demo, thời gian dự kiến…"></textarea><small class="field-error"></small></label>
-      </div>
-      <button class="button button-primary" type="submit">Tạo nội dung tư vấn</button>
-    </form>
-    <div id="consultationResult" hidden></div>
-  </dialog>
-  <dialog class="modal legal-dialog" id="legalDialog" aria-labelledby="legalTitle">
-    <button class="modal-close" type="button" data-close-dialog aria-label="Đóng">×</button>
-    <div id="legalContent"></div>
-  </dialog>
-  <dialog class="confirm-dialog" id="confirmDialog" aria-labelledby="confirmTitle">
-    <h2 id="confirmTitle">Xóa toàn bộ giỏ hàng?</h2><p>Thao tác này sẽ xóa các sản phẩm đã chọn trên thiết bị.</p>
-    <div><button class="button button-secondary" id="cancelConfirm" type="button">Hủy</button><button class="button button-danger" id="confirmClear" type="button">Xóa giỏ hàng</button></div>
-  </dialog>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-  <script src="config.js" defer></script>
-  <script src="data/beats.js" defer></script>
-  <script src="app.js" defer></script>
+  <main id="content">
+    <section class="hero" id="home">
+      <div><small class="kicker">KDASUN MUSIC · VIỆT NAM / LÀO / THÁI LAN</small><h1>Âm nhạc chạm cảm xúc<br><em>Sáng tạo không giới hạn</em></h1><p>Kho beat bản quyền, phối nhạc và dịch vụ sáng tạo dành cho nghệ sĩ.</p><a href="#beats">▶ Khám phá kho beat</a></div>
+      <div class="visual"><div class="sun"></div><div class="mount"></div><article><small>FOLK / THÁI</small><h2>Bình Minh Tây Bắc</h2><p>BPM 92 · KEY Em</p></article><button type="button" data-play="bm" aria-label="Nghe thử Bình Minh Tây Bắc">▶</button></div>
+    </section>
+    <section class="stats" aria-label="Thông tin nền tảng">
+      <article>♫<b id="beatTotal">0</b><small>Beat trong danh mục</small></article>
+      <article>◇<b>3</b><small>Thị trường Việt · Lào · Thái</small></article>
+      <article>♙<b>Trực tiếp</b><small>Hỗ trợ từ KDASUN</small></article>
+      <article>✓<b>Rõ ràng</b><small>Xác nhận trước thanh toán</small></article>
+    </section>
+    <section id="beats">
+      <div class="title"><div><small class="kicker">TUYỂN CHỌN</small><h2>Beat nổi bật</h2></div><label><span class="sr-only">Lọc theo thể loại</span><select id="genre"><option value="">Tất cả thể loại</option></select></label></div>
+      <p class="result-note" id="resultNote" aria-live="polite"></p><div class="beats" id="grid"></div>
+    </section>
+    <section class="services" id="services">
+      <div><small class="kicker">HỆ SINH THÁI SÁNG TẠO</small><h2>Từ ý tưởng đến bản phát hành</h2><p>Phối nhạc, viết lời, mix/master, hình ảnh và marketing bài hát.</p></div>
+      <div class="servicegrid"><article>♫<b>Phối nhạc riêng</b><small>Theo chất giọng và câu chuyện.</small></article><article>◉<b>Mix &amp; Master</b><small>Âm thanh hoàn thiện chuyên nghiệp.</small></article><article>✦<b>AI Studio</b><small>Ảnh, video và nội dung quảng bá.</small></article><article>↗<b>Marketing</b><small>Tối ưu phát hành và tiếp cận.</small></article></div>
+    </section>
+    <section class="contact" id="contact"><div><small class="kicker">BẮT ĐẦU DỰ ÁN</small><h2>Kể KDASUN nghe về bài hát của bạn.</h2></div><a href="mailto:contact@kdasun.vn">Liên hệ tư vấn →</a></section>
+  </main>
+  <nav class="mobile" aria-label="Điều hướng trên điện thoại"><a href="#home">⌂<small>Trang chủ</small></a><a href="#beats">♫<small>Kho beat</small></a><a href="#services">✦<small>Dịch vụ</small></a><button id="mfav" type="button">♡<small>Yêu thích</small></button><button id="mcart" type="button">🛒<small>Giỏ hàng</small></button></nav>
+  <div class="player" id="player" hidden role="region" aria-label="Beat đang chọn"><span class="cover"></span><div><b id="ptitle"></b><small id="pmeta"></small></div><button id="pp" type="button" aria-label="Phát hoặc tạm dừng">▶</button><button id="pclose" type="button" aria-label="Đóng trình phát">×</button></div>
+  <section class="drawer" id="drawer" aria-labelledby="dtitle" aria-hidden="true"><div><h2 id="dtitle">Giỏ hàng</h2><button id="dclose" type="button" aria-label="Đóng">×</button></div><section id="dbody"></section></section>
+  <div class="shade" id="shade" hidden></div><div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="data.js"></script><script src="app.js"></script>
 </body>
 </html>

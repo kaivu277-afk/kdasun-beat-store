@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>KDASUN Admin — Bản cục bộ</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header><b>KDASUN ADMIN STUDIO</b><a href="index.html">Xem website ↗</a></header>
+  <aside><strong>KDASUN</strong><nav aria-label="Các khu vực quản trị">⌂ Tổng quan<br>♫ Kho beat<br>◆ Thể loại<br>✦ Dịch vụ<br>🛒 Đơn hàng<br>♙ Khách hàng<br>▣ Giao diện<br>⚙ Cài đặt</nav></aside>
+  <main>
+    <div class="welcome"><div><h1>Quản trị nội dung cục bộ</h1><p>Quản lý dữ liệu thử nghiệm của KDASUN Music trên thiết bị này.</p></div><button id="publish" type="button">Lưu bản cục bộ</button></div>
+    <section class="metrics"><article>♫<b id="metricBeats">0</b><small>Tổng số beat</small></article><article>◉<b>—</b><small>Lượt nghe — cần backend</small></article><article>🛒<b>—</b><small>Đơn hàng — cần backend</small></article><article>₫<b>—</b><small>Doanh thu — cần backend</small></article></section>
+    <div class="work">
+      <section><div class="head"><h2>Danh sách beat</h2><button id="add" type="button">+ Thêm beat</button></div><div id="list"></div></section>
+      <section class="edit"><h2>Chỉnh sửa beat</h2><div class="preview"><span></span></div><label>Tên beat<input id="title" required></label><div class="two"><label>Thể loại<input id="genre" required></label><label>BPM<input id="bpm" type="number" min="1" max="300"></label></div><div class="two"><label>KEY<input id="key"></label><label>Giá bán<input id="price" type="number" min="0"></label></div><label>Mood<input id="mood"></label><label>Mô tả<textarea id="desc" rows="4"></textarea></label><button id="save" type="button">Lưu thay đổi</button></section>
+    </div>
+  </main>
+  <div class="note">Bản quản trị này chỉ lưu bằng localStorage trên trình duyệt. Quản trị thật cần Cloudflare Access/Auth + Worker API + D1/R2. Không có mật khẩu quản trị trong JavaScript.</div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="data.js"></script><script src="admin.js"></script>
+</body>
+</html>

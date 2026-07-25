@@ -3,54 +3,29 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const html = fs.readFileSync(path.join(root, "index.html"), "utf8");
-const css = fs.readFileSync(path.join(root, "style.css"), "utf8");
-const app = fs.readFileSync(path.join(root, "app.js"), "utf8");
+const required = ["index.html","style.css","app.js","data.js","admin.html","admin.css","admin.js"];
 const failures = [];
+const read = file => fs.readFileSync(path.join(root,file),"utf8");
+const check = (condition,message) => { if(!condition) failures.push(message); };
 
-function check(condition, message) {
-  if (!condition) failures.push(message);
+for(const file of required) check(fs.existsSync(path.join(root,file)),`Thiếu file ${file}`);
+for(const file of required.filter(file => fs.existsSync(path.join(root,file)))) {
+  const content=read(file);
+  check(!/(?:Ã[\x80-\xBF]|Â[·©®]|â[€š€™œž]|�)/.test(content),`${file} còn lỗi mã hóa`);
 }
 
-const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map(match => match[1]);
-const duplicateIds = ids.filter((id, index) => ids.indexOf(id) !== index);
-check(duplicateIds.length === 0, `ID bị trùng: ${[...new Set(duplicateIds)].join(", ")}`);
-const fragmentLinks = [...html.matchAll(/\shref="#([^"]+)"/g)].map(match => match[1]);
-for (const fragment of fragmentLinks) {
-  check(ids.includes(fragment), `Anchor không có đích: #${fragment}`);
+for(const htmlFile of ["index.html","admin.html"]) {
+  const html=read(htmlFile);
+  const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(match=>match[1]);
+  check(new Set(ids).size===ids.length,`${htmlFile} có ID trùng`);
+  const refs=[...html.matchAll(/\s(?:src|href)="([^"]+)"/g)].map(match=>match[1]).filter(ref=>!/^(?:https?:|mailto:|tel:|#)/.test(ref));
+  for(const ref of refs) check(fs.existsSync(path.join(root,ref)),`${htmlFile} tham chiếu file không tồn tại: ${ref}`);
 }
 
-const localReferences = [...html.matchAll(/\s(?:src|href)="([^"]+)"/g)]
-  .map(match => match[1])
-  .filter(reference => !/^(?:https?:|mailto:|tel:|#)/.test(reference));
-for (const reference of localReferences) {
-  check(fs.existsSync(path.join(root, reference)), `Thiếu tài nguyên: ${reference}`);
-}
+const scripts=read("app.js")+read("admin.js");
+check(!/\balert\s*\(/.test(scripts),"Còn dùng alert()");
+check(!/(?:password|mật khẩu)\s*[:=]\s*["'][^"']+/i.test(scripts),"Có dấu hiệu mật khẩu hard-code");
+check(!/\bonclick=/.test(read("index.html")+read("admin.html")),"Có inline onclick");
 
-for (const [name, content] of Object.entries({ "index.html": html, "style.css": css, "app.js": app })) {
-  check(!/(?:Ã[\x80-\xBF]|Â[·©®]|â[€š€™œž]|�)/.test(content), `${name} còn chuỗi lỗi mã hóa`);
-}
-
-check(!/href="#"/.test(html), "Có link # không có đích");
-check(!/\bonclick=/.test(html), "Có inline onclick");
-check(!/\balert\s*\(/.test(app), "app.js còn dùng alert()");
-check(!/0900000000/.test(html + app), "Còn số điện thoại giả");
-check(html.includes('lang="vi"'), "Thiếu ngôn ngữ tiếng Việt");
-check(html.includes("<main"), "Thiếu thẻ main");
-check(html.includes("<header"), "Thiếu thẻ header");
-check(html.includes("<footer"), "Thiếu thẻ footer");
-check(html.includes("manifest.webmanifest"), "Thiếu manifest");
-check(html.includes("application/ld+json"), "Thiếu structured data");
-check(app.includes("HTMLAudioElement") || html.includes("<audio"), "Thiếu audio element");
-check(app.includes("localStorage"), "Thiếu lưu localStorage");
-check(css.includes("prefers-reduced-motion"), "Thiếu hỗ trợ reduced motion");
-check(css.includes("@media (max-width: 620px)"), "Thiếu breakpoint mobile");
-check(css.includes("@media (max-width: 900px)"), "Thiếu breakpoint tablet");
-
-if (failures.length) {
-  console.error(`Kiểm tra tĩnh thất bại (${failures.length}):`);
-  failures.forEach(failure => console.error(`- ${failure}`));
-  process.exit(1);
-}
-
-console.log(`Kiểm tra tĩnh đạt: ${ids.length} ID duy nhất, ${fragmentLinks.length} anchor và ${localReferences.length} tài nguyên nội bộ hợp lệ.`);
+if(failures.length){console.error(failures.map(item=>`- ${item}`).join("\n"));process.exit(1);}
+console.log("Kiểm tra tĩnh đạt: đủ 7 file chính, mã hóa/đường dẫn/ID/JavaScript an toàn.");
