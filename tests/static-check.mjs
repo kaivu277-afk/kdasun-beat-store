@@ -3,7 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const required = ["index.html","style.css","app.js","data.js","admin.html","admin.css","admin.js"];
+const required = ["index.html","style.css","app.js","config.js","data.js","admin.html","admin.css","admin.js","manifest.webmanifest","robots.txt"];
 const failures = [];
 const read = file => fs.readFileSync(path.join(root,file),"utf8");
 const check = (condition,message) => { if(!condition) failures.push(message); };
@@ -28,7 +28,10 @@ check(!/(?:password|mật khẩu)\s*[:=]\s*["'][^"']+/i.test(scripts),"Có dấu
 check(!/\bonclick=/.test(read("index.html")+read("admin.html")),"Có inline onclick");
 check(!/href=["']admin\.html["']/.test(read("index.html")),"Trang khách còn hiển thị liên kết quản trị");
 check(!/<aside[\s>]/.test(read("index.html")),"Trang khách còn dùng sidebar kiểu quản trị");
-check(/id=["']beats["']/.test(read("index.html")) && /id=["']cartOpen["']/.test(read("index.html")),"Trang khách thiếu kho beat hoặc giỏ hàng");
+const customerHtml=read("index.html");
+check(/id=["']beats["']/.test(customerHtml) && /id=["']drawer["']/.test(customerHtml),"Trang khách thiếu kho beat hoặc bảng lựa chọn");
+check(/data-zalo-link/.test(customerHtml) && /KDASUN_CONFIG/.test(read("config.js")),"Thiếu liên kết Zalo dùng cấu hình tập trung");
+check(/property=["']og:image["']/.test(customerHtml) && /manifest\.webmanifest/.test(customerHtml),"Thiếu social preview hoặc manifest");
 
 if(failures.length){console.error(failures.map(item=>`- ${item}`).join("\n"));process.exit(1);}
-console.log("Kiểm tra tĩnh đạt: đủ 7 file chính, mã hóa/đường dẫn/ID/JavaScript an toàn.");
+console.log("Kiểm tra tĩnh đạt: đủ file chính, mã hóa/đường dẫn/ID/JavaScript an toàn.");

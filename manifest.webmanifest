@@ -1,0 +1,11 @@
+{
+  "name": "LO VAN LAM AM NHAC THAI",
+  "short_name": "LO VAN LAM",
+  "description": "Studio âm nhạc Thái Tây Bắc",
+  "lang": "vi",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fbfaf6",
+  "theme_color": "#0d1511",
+  "icons": [{"src":"assets/icons/favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
