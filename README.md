@@ -19,7 +19,7 @@ Website tĩnh của **LO VAN LAM AM NHAC THAI**, giới thiệu studio âm nhạ
 Mở `config.js` và điền:
 
 ```js
-zaloUrl: "https://zalo.me/SO_DIEN_THOAI_THAT"
+zaloUrl: "https://zalo.me/0335212405"
 ```
 
 Không dùng số giả. Khi trường này trống, nút Zalo mở thông báo cấu hình thay vì đưa khách sang sai tài khoản. Khi có domain chính thức, điền `siteUrl` rồi bổ sung canonical và URL sitemap.
@@ -67,7 +67,7 @@ Mở `http://localhost:8080/` và `http://localhost:8080/admin.html`.
 
 ## TODO
 
-- Điền link Zalo thật.
+- Zalo chính thức đã cấu hình: `0335212405`.
 - Thêm cover/audio preview thật cho kho beat.
 - Xác nhận bảng giá và nội dung giấy phép trước khi công bố.
 - Tích hợp backend bảo mật nếu cần quản trị, upload file và quản lý đơn hàng cho nhiều thiết bị.

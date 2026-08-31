@@ -6,7 +6,8 @@
  * đọc giá trị duy nhất tại đây.
  */
 window.KDASUN_CONFIG = Object.freeze({
-  zaloUrl: "", // TODO: chủ website điền link Zalo thật.
+  zaloUrl: "https://zalo.me/0335212405",
+  phone: "0335212405",
   youtubeUrl: "https://www.youtube.com/@amnhacthaitaybac",
   email: "", // TODO: điền email công việc nếu muốn hiển thị.
   siteUrl: "https://kdasun.pages.dev/"
