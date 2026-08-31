@@ -9,6 +9,8 @@ window.KDASUN_CONFIG = Object.freeze({
   zaloUrl: "https://zalo.me/0335212405",
   phone: "0335212405",
   youtubeUrl: "https://www.youtube.com/@amnhacthaitaybac",
+  tiktokUrl: "https://www.tiktok.com/@lovanlamamnhacthai",
+  facebookUrl: "https://www.facebook.com/rim.lam.77",
   email: "", // TODO: điền email công việc nếu muốn hiển thị.
   siteUrl: "https://kdasun.pages.dev/"
 });

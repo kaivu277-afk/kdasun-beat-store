@@ -6,6 +6,7 @@ Website tĩnh của **LO VAN LAM AM NHAC THAI**, giới thiệu studio âm nhạ
 
 - `index.html`, `style.css`, `app.js`: website khách hàng.
 - `config.js`: link Zalo, YouTube, email và domain.
+- Kênh chính thức: YouTube, TikTok và Facebook được cấu hình tập trung trong `config.js`.
 - `data.js`: dự án YouTube và dữ liệu beat mặc định.
 - `admin.html`, `admin.css`, `admin.js`: công cụ chỉnh beat **cục bộ** bằng localStorage.
 - `assets/images/projects`: thumbnail dự án từ kênh YouTube của chủ website.
