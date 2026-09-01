@@ -19,5 +19,5 @@ window.KDASUN_CONFIG = Object.freeze({
     qrImage: "assets/images/mbbank-support-qr.webp"
   }),
   email: "", // TODO: điền email công việc nếu muốn hiển thị.
-  siteUrl: "https://kdasun.pages.dev/"
+  siteUrl: "https://amnhacthai.pages.dev/"
 });

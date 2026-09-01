@@ -1,6 +1,6 @@
 # LO VAN LAM AM NHAC THAI
 
-Website tĩnh của **LO VAN LAM AM NHAC THAI**, giới thiệu studio âm nhạc Thái Tây Bắc, các dự án đã phát hành, dịch vụ sáng tác/phối khí, kho beat và liên hệ trực tiếp qua Zalo. Dự án không dùng framework nặng và triển khai trực tiếp trên Cloudflare Pages tại `https://kdasun.pages.dev/`.
+Website tĩnh của **LO VAN LAM AM NHAC THAI**, giới thiệu studio âm nhạc Thái Tây Bắc, các dự án đã phát hành, dịch vụ sáng tác/phối khí, kho beat và liên hệ trực tiếp qua Zalo. Dự án không dùng framework nặng và triển khai trực tiếp trên Cloudflare Pages tại `https://amnhacthai.pages.dev/`.
 
 ## Cấu trúc
 
