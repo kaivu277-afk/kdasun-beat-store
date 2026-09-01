@@ -42,7 +42,7 @@
   }
 
   function renderProjects() {
-    $("#projectGrid").innerHTML = projects.map(project => `
+    $("#projectGrid").innerHTML = projects.slice(0, 3).map(project => `
       <a class="project-card" href="https://www.youtube.com/watch?v=${encodeURIComponent(project.id)}" target="_blank" rel="noopener noreferrer">
         <img src="${escapeHtml(project.image)}" width="1280" height="720" loading="lazy" alt="Ảnh bìa ${escapeHtml(project.title)}">
         <span class="project-copy"><small>${escapeHtml(project.category)}</small><h3>${escapeHtml(project.title)}</h3><p>${escapeHtml(project.subtitle)}</p></span>
@@ -114,6 +114,30 @@
     });
   }
 
+  function openSupportDialog() {
+    toggleMenu(true);
+    const dialog = $("#supportDialog");
+    if (typeof dialog.showModal === "function" && !dialog.open) dialog.showModal();
+  }
+  function closeSupportDialog() {
+    const dialog = $("#supportDialog");
+    if (dialog.open) dialog.close();
+  }
+  async function copyAccountNumber() {
+    const accountNumber = String(config.support?.accountNumber || $("#supportAccount")?.textContent || "").trim();
+    if (!accountNumber) return showToast("Chưa có số tài khoản để sao chép.");
+    try {
+      await navigator.clipboard.writeText(accountNumber);
+      showToast("Đã sao chép số tài khoản 0020110128801.");
+    } catch {
+      const field = document.createElement("textarea");
+      field.value = accountNumber; field.setAttribute("readonly", ""); field.style.position = "fixed"; field.style.opacity = "0";
+      document.body.append(field); field.select();
+      const copied = document.execCommand("copy"); field.remove();
+      showToast(copied ? "Đã sao chép số tài khoản." : "Không thể sao chép. Hãy nhấn giữ số tài khoản.");
+    }
+  }
+
   function toggleMenu(forceClose = false) {
     const menu = $("#mobileMenu"), button = $("#menuToggle");
     const shouldOpen = !forceClose && menu.hidden;
@@ -127,7 +151,11 @@
   $$("#mobileMenu a").forEach(link => link.addEventListener("click", () => toggleMenu(true)));
   $("#drawerClose").addEventListener("click", closeDrawer); $("#backdrop").addEventListener("click", closeDrawer);
   $$('[data-close-dialog]').forEach(button => button.addEventListener("click", () => $("#contactDialog").close()));
+  $$('[data-support-open]').forEach(button => button.addEventListener("click", openSupportDialog));
+  $$('[data-support-close]').forEach(button => button.addEventListener("click", closeSupportDialog));
+  $("[data-copy-account]").addEventListener("click", copyAccountNumber);
   $("#contactDialog").addEventListener("click", event => { if (event.target === $("#contactDialog")) $("#contactDialog").close(); });
+  $("#supportDialog").addEventListener("click", event => { if (event.target === $("#supportDialog")) closeSupportDialog(); });
   window.addEventListener("scroll", () => $(".site-header").classList.toggle("scrolled", window.scrollY > 10), {passive:true});
   document.addEventListener("click", event => {
     const play = event.target.closest("[data-play]"), favorite = event.target.closest("[data-favorite]"), select = event.target.closest("[data-select]"), remove = event.target.closest("[data-remove]");

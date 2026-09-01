@@ -11,6 +11,13 @@ window.KDASUN_CONFIG = Object.freeze({
   youtubeUrl: "https://www.youtube.com/@amnhacthaitaybac",
   tiktokUrl: "https://www.tiktok.com/@lovanlamamnhacthai",
   facebookUrl: "https://www.facebook.com/rim.lam.77",
+  support: Object.freeze({
+    bankName: "MB Ngân hàng Quân đội (MBBank)",
+    branch: "Chi nhánh Thăng Long",
+    accountName: "LO VAN LAM",
+    accountNumber: "0020110128801",
+    qrImage: "assets/images/mbbank-support-qr.webp"
+  }),
   email: "", // TODO: điền email công việc nếu muốn hiển thị.
   siteUrl: "https://kdasun.pages.dev/"
 });

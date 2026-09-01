@@ -11,6 +11,7 @@ Website tĩnh của **LO VAN LAM AM NHAC THAI**, giới thiệu studio âm nhạ
 - `admin.html`, `admin.css`, `admin.js`: công cụ chỉnh beat **cục bộ** bằng localStorage.
 - `assets/images/projects`: thumbnail dự án từ kênh YouTube của chủ website.
 - `assets/images/kdasun-social-card.jpg`: ảnh chia sẻ mạng xã hội.
+- `assets/images/mbbank-support-qr.webp`: mã QR ủng hộ MBBank đã được chủ website cung cấp.
 - `assets/audio`: bản nghe thử MP3 đã gắn producer tag; không đưa WAV/stems đầy đủ lên repository công khai.
 - `manifest.webmanifest`, `robots.txt`, `_headers`: PWA cơ bản, crawler và header Cloudflare.
 - `tests/static-check.mjs`: kiểm tra đường dẫn, mã hóa và cấu trúc tĩnh.
@@ -69,6 +70,7 @@ Mở `http://localhost:8080/` và `http://localhost:8080/admin.html`.
 ## TODO
 
 - Zalo chính thức đã cấu hình: `0335212405`.
+- Thông tin ủng hộ: MBBank chi nhánh Thăng Long, chủ tài khoản `LO VAN LAM`, số tài khoản `0020110128801`.
 - Thêm cover/audio preview thật cho kho beat.
 - Xác nhận bảng giá và nội dung giấy phép trước khi công bố.
 - Tích hợp backend bảo mật nếu cần quản trị, upload file và quản lý đơn hàng cho nhiều thiết bị.
