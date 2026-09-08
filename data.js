@@ -8,13 +8,18 @@
  * `previewUrl` phải là file audio thật. Để trống sẽ hiện “Chưa có bản nghe thử”,
  * website không mô phỏng thời gian phát bằng timer.
  */
+/**
+ * VIDEO ĐÃ PHÁT HÀNH
+ * Thêm video mới ở đầu danh sách. `id` là phần sau `watch?v=` của YouTube;
+ * ảnh WebP đặt trong assets/images/projects để trang tải nhanh và ổn định.
+ */
 window.KDASUN_PROJECTS = Object.freeze([
-  {id:"rqpb4xq3zRc",title:"Bó Lụ Pền Luông Côn",subtitle:"Dạy bảo con nên người",category:"Nhạc Thái Tây Bắc",image:"assets/images/projects/bo-lu-pen-luong-con.webp"},
-  {id:"tulb5SX0-64",title:"Cóm Lụ Non",subtitle:"Lò Văn Lâm × KDASUN",category:"Dân ca Thái · Remix",image:"assets/images/projects/com-lu-non.webp"},
-  {id:"3QYPyDH9_A0",title:"Tay Nặm Ma",subtitle:"Sáng tác Lò Văn Lâm × KDASUN",category:"Nhạc Thái Sông Mã",image:"assets/images/projects/tay-nam-ma.webp"},
-  {id:"veYPZGtPVfc",title:"Nha Lưm Cồng Êm Cồng Ải",subtitle:"Đừng quên công ơn bố mẹ",category:"Ca khúc gia đình",image:"assets/images/projects/nha-lum-cong-on.webp"},
-  {id:"Rhj9XzgIsso",title:"Mẹ Con Mất Rồi",subtitle:"Êm Lụ Tài Sìa Lẹo",category:"Khắp Quam Tay",image:"assets/images/projects/me-con-mat-roi.webp"},
-  {id:"_oyLSXZluLw",title:"Êm Bó Lụ Dệt Pặư",subtitle:"Mẹ dặn con làm dâu",category:"Khắp Thái Tây Bắc",image:"assets/images/projects/em-bo-lu-det-pau.webp"}
+  {id:"glbuqx4bVfo",title:"Khun Lú – Náng Ủa",subtitle:"Lò Thị Ban × Lò Văn Lâm · 05/09/2026",category:"Thẳm Lú Ủa · Nhạc Thái Tây Bắc",image:"assets/images/projects/khun-lu-nang-ua.webp"},
+  {id:"il-ms5dvNQo",title:"Nghĩa Mè Êm – Tấm Lòng Người Mẹ",subtitle:"Lò Cầm Piu × Lò Thị Ban × Lò Văn Lâm · 03/09/2026",category:"Ca khúc về mẹ",image:"assets/images/projects/nghia-me-em.webp"},
+  {id:"KGH_mxkoHRo",title:"Tây Bắc Chào Đón",subtitle:"Hoàng Ngọc Chấn × Lò Văn Lâm · 02/09/2026",category:"Nhạc Tây Bắc",image:"assets/images/projects/tay-bac-chao-don.webp"},
+  {id:"9sfOvDB6X70",title:"Koam Bó Sơn Pú Hô Yaang Sieng",subtitle:"Lời dạy của Cụ Hồ vẫn còn vang vọng · 31/08/2026",category:"Âm nhạc Thái",image:"assets/images/projects/koam-bo-son-pu-ho.webp"},
+  {id:"_oyLSXZluLw",title:"Êm Bó Lụ Dệt Pặư",subtitle:"Lò Cầm Piu × Lò Văn Lâm · 28/08/2026",category:"Mẹ dặn con làm dâu",image:"assets/images/projects/em-bo-lu-det-pau.webp"},
+  {id:"eQvOVcE9icM",title:"Lụ Chằư Chàn",subtitle:"Lò Cầm Piu × Lò Văn Lâm · 21/08/2026",category:"AI Cover · Nhạc Thái Tây Bắc",image:"assets/images/projects/lu-chau-chan.webp"}
 ]);
 
 window.KDASUN_BEATS = Object.freeze([

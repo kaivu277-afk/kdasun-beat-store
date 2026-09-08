@@ -42,10 +42,10 @@
   }
 
   function renderProjects() {
-    $("#projectGrid").innerHTML = projects.slice(0, 3).map(project => `
-      <a class="project-card" href="https://www.youtube.com/watch?v=${encodeURIComponent(project.id)}" target="_blank" rel="noopener noreferrer">
+    $("#projectGrid").innerHTML = projects.slice(0, 6).map((project, index) => `
+      <a class="project-card" href="https://www.youtube.com/watch?v=${encodeURIComponent(project.id)}" target="_blank" rel="noopener noreferrer" aria-label="Phát ${escapeHtml(project.title)} trên YouTube">
         <img src="${escapeHtml(project.image)}" width="1280" height="720" loading="lazy" alt="Ảnh bìa ${escapeHtml(project.title)}">
-        <span class="project-copy"><small>${escapeHtml(project.category)}</small><h3>${escapeHtml(project.title)}</h3><p>${escapeHtml(project.subtitle)}</p></span>
+        <span class="project-copy"><small>${index === 0 ? "MỚI NHẤT · " : ""}${escapeHtml(project.category)}</small><h3>${escapeHtml(project.title)}</h3><p>${escapeHtml(project.subtitle)}</p></span>
         <span class="project-play" aria-hidden="true">▶</span>
       </a>`).join("");
   }

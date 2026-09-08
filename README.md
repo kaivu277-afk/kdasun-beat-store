@@ -36,6 +36,13 @@ Không dùng số giả. Khi trường này trống, nút Zalo mở thông báo 
 
 Nếu chưa có audio thật, để `previewUrl` trống. Website sẽ hiện “Chưa có bản nghe thử”, không chạy bộ đếm giả.
 
+## Cập nhật video và gói dịch vụ
+
+- Video công khai mới nhất nằm trong `KDASUN_PROJECTS` ở `data.js`. Thêm video mới ở đầu mảng, dùng ID YouTube thật và đặt thumbnail WebP 16:9 trong `assets/images/projects`.
+- Trang chủ hiển thị tối đa 6 video mới. Không đưa video nháp, riêng tư hoặc đang kiểm tra bản quyền vào danh sách.
+- Gói ưu đãi 199K–499K nằm trong khu `#offers` của `index.html`; dịch vụ sản xuất chuyên nghiệp được giữ riêng trong khu `#services`.
+- Khi thay giá, cần cập nhật cả tên gói, phạm vi, thời lượng, số vòng chỉnh sửa và điều kiện sử dụng để khách không hiểu nhầm.
+
 ## Quản trị cục bộ
 
 Mở `/admin.html` để thử thêm/sửa beat trên trình duyệt hiện tại. Dữ liệu được lưu ở key `kd_admin` trong localStorage và không đồng bộ cho khách truy cập khác. Xem `ADMIN_SETUP.md` để nâng cấp quản trị thật.
